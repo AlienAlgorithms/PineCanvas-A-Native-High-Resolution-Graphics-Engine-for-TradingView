@@ -1,0 +1,28 @@
+// PineCanvas - Rolling RSI Heatmap
+// An example from the PineCanvas publication on TradingView.
+// (c) Alien_Algorithms. Licensed under CC BY-NC-SA 4.0, see LICENSE.
+//@version=6
+indicator("PineCanvas - Rolling RSI Heatmap", overlay = false,
+  max_polylines_count = 100)
+import Alien_Algorithms/PineCanvas/1 as pc
+// Make sure to update to the latest library version
+
+// Stateful series calculations must run on every bar.
+float rsi5 = ta.rsi(close, 5)
+float rsi8 = ta.rsi(close, 8)
+float rsi13 = ta.rsi(close, 13)
+float rsi21 = ta.rsi(close, 21)
+float rsi34 = ta.rsi(close, 34)
+
+var pc.ValueScroll history = pc.valueScroll(5, 150)
+var pc.Canvas heat = pc.heatmap(
+  pc.gradient(#602060, #305bb4, #31b6ad, #f4d24c, #f07735))
+  .colorLevels(32)
+  .valueRange(0.0, 100.0)
+  .opacity(25, 100)
+
+if barstate.isconfirmed
+    history.push(array.from(rsi5, rsi8, rsi13, rsi21, rsi34))
+
+if barstate.islast
+    heat.drawLookback(history, 0.0, 5.0)

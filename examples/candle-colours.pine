@@ -1,0 +1,15 @@
+// PineCanvas - Candle Colours
+// An example from the PineCanvas publication on TradingView.
+// (c) Alien_Algorithms. Licensed under CC BY-NC-SA 4.0, see LICENSE.
+//@version=6
+indicator("PineCanvas - Candle Colours", overlay = false, max_polylines_count = 100)
+import Alien_Algorithms/PineCanvas/1 as pc
+// Make sure to update to the latest library version
+
+var pc.PaletteField pixels = pc.paletteField(2, 30)
+var pc.Canvas canvas = pc.newCanvas(array.from(color.red, color.lime))
+
+if barstate.islast and bar_index >= 29
+    for col = 0 to 29
+        pixels.set(0, col, close[29 - col] >= open[29 - col] ? 1 : 0)
+    canvas.drawLookback(pixels, 0, 0.0, 2.0)

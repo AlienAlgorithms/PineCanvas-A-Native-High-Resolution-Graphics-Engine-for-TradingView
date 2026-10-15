@@ -1,0 +1,27 @@
+// PineCanvas - High Volume Zones
+// An example from the PineCanvas publication on TradingView.
+// (c) Alien_Algorithms. Licensed under CC BY-NC-SA 4.0, see LICENSE.
+//@version=6
+indicator("PineCanvas - High Volume Zones", overlay = true,
+  max_polylines_count = 100)
+import Alien_Algorithms/PineCanvas/1 as pc
+// Make sure to update to the latest library version
+
+int lookback = input.int(100, "Lookback bars", minval = 20, maxval = 300)
+float averageVolume = ta.sma(volume, 20)
+var pc.Canvas zones = pc.newCanvas()
+
+if barstate.islast and bar_index >= lookback + 19
+    for column = 0 to lookback - 1
+        int offset = lookback - 1 - column
+        int leftTime = time[offset]
+        int rightTime = offset > 0 ? time[offset - 1] : time + int(time - time[1])
+        // Heavier volume draws more opaque, in four steps so the colours stay few
+        int tier = int(math.min(3, nz(volume[offset] / averageVolume[offset]) * 2))
+        color zoneColor = color.new(
+          close[offset] >= open[offset] ? color.teal : color.red, 85 - 20 * tier)
+        zones.rect(
+          chart.point.from_time(leftTime, high[offset]),
+          chart.point.from_time(rightTime, low[offset]),
+          zoneColor)
+    zones.drawShapes()
