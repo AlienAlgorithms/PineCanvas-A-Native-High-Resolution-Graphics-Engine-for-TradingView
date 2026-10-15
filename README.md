@@ -346,6 +346,12 @@ The publication cover artwork was rendered natively in Pine Script using PineCan
 
 ---
 
+## Built with PineCanvas
+
+[![Crypto Liquidation Heatmap on TradingView](https://s3.tradingview.com/3/32PMF3sV.png?v=1792070919)](https://www.tradingview.com/script/32PMF3sV-Crypto-Liquidation-Heatmap/)
+
+**[Crypto Liquidation Heatmap](https://www.tradingview.com/script/32PMF3sV-Crypto-Liquidation-Heatmap/)** is a free TradingView indicator whose heatmap is drawn with PineCanvas. It estimates where leveraged positions would be liquidated from open interest, spreads new positions across a leverage mix, and draws the result as a full heatmap grid on price, with thousands of cells where the old version was limited to 500 boxes. It is free to use on TradingView. Its source code is protected, so it is not part of this repository.
+
 ## Related libraries
 
 - [Pine3D](https://github.com/AlienAlgorithms/Pine3D-A-Native-3D-Graphical-Rendering-Engine): builds the 3D scenes that PineCanvas draws through `rasterize()`.
