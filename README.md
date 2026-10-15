@@ -346,6 +346,11 @@ The publication cover artwork was rendered natively in Pine Script using PineCan
 
 ---
 
+## Related libraries
+
+- [Pine3D](https://github.com/AlienAlgorithms/Pine3D-A-Native-3D-Graphical-Rendering-Engine): builds the 3D scenes that PineCanvas draws through `rasterize()`.
+- [NeuraLib](https://github.com/AlienAlgorithms/NeuraLib-A-Native-AI-and-Deep-Learning-Runtime-for-TradingView): machine learning in Pine Script, for models whose output PineCanvas can map onto price.
+
 ## Licence
 
 PineCanvas is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/). The full legal text is in [LICENSE](LICENSE).
@@ -356,4 +361,4 @@ PineCanvas is licensed under [Creative Commons Attribution-NonCommercial-ShareAl
 
 ## Author
 
-Built by [Alien_Algorithms on TradingView](https://www.tradingview.com/u/Alien_Algorithms/?aff_id=169033#published-scripts). More indicators and libraries at [alienalgorithms.com](https://alienalgorithms.com).
+Built by [Alien_Algorithms on TradingView](https://www.tradingview.com/u/Alien_Algorithms/?aff_id=169033#published-scripts) and [AlienAlgorithms on GitHub](https://github.com/AlienAlgorithms). More indicators and libraries at [alienalgorithms.com](https://alienalgorithms.com).

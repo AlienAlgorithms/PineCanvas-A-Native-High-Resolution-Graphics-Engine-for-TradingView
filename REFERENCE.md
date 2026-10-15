@@ -5,6 +5,7 @@
 - Product page: https://alienalgorithms.com/pinecanvas
 - Documentation: https://docs.alienalgorithms.com/PineCanvas-Graphics-Engine-Tradingview
 - Library and source code on TradingView: https://www.tradingview.com/script/KqYfTY0F-PineCanvas-A-Native-High-Resolution-Graphics-Engine/
+- Source code, examples and this reference on GitHub: https://github.com/AlienAlgorithms/PineCanvas-A-Native-High-Resolution-Graphics-Engine-for-TradingView
 - Import: `import Alien_Algorithms/PineCanvas/1 as pc` (use the latest version number shown on the TradingView publication)
 - Language: Pine Script v6
 - Author: Alien_Algorithms, https://www.tradingview.com/u/Alien_Algorithms/?aff_id=169033#published-scripts
